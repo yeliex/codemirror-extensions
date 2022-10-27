@@ -1,0 +1,20 @@
+{
+  "name": "codemirror-helper",
+  "version": "0.0.1",
+  "description": "codemirror helper dialog",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeliex/codemirror-markdown.git"
+  },
+  "keywords": [
+    "codemirror",
+    "markdown",
+    "markdown-editor"
+  ],
+  "author": "yeliex <yeliex@yeliex.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yeliex/codemirror-markdown/issues"
+  },
+  "homepage": "https://github.com/yeliex/codemirror-markdown#readme"
+}
