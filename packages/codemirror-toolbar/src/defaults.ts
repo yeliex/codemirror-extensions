@@ -1,0 +1,25 @@
+import * as Items from './items';
+
+export const markdownItems = [
+    Items.Markdown.bold,
+    Items.Markdown.italic,
+    Items.Markdown.strike,
+    Items.Markdown.underline,
+    Items.split,
+    Items.Markdown.h1,
+    Items.Markdown.h2,
+    Items.Markdown.h3,
+    Items.Markdown.h4,
+    Items.Markdown.h5,
+    Items.Markdown.h6,
+    Items.split,
+    Items.Markdown.quote,
+    Items.Markdown.ul,
+    Items.Markdown.ol,
+    Items.Markdown.todo,
+    Items.split,
+    Items.Markdown.link,
+    Items.Markdown.image,
+    Items.space,
+    Items.fullScreen,
+];

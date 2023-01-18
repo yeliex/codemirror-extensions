@@ -1,7 +1,7 @@
 {
-  "name": "codemirror-helper",
+  "name": "codemirror-final-newline",
   "version": "0.0.0",
-  "description": "codemirror helper dialog",
+  "description": "add final newline for codemirror",
   "type": "module",
   "types": "src/index.ts",
   "main": "dist/index.cjs",
@@ -20,15 +20,17 @@
   },
   "keywords": [
     "codemirror",
-    "markdown",
-    "markdown-editor",
-    "codemirror-helper",
-    "helper-dialog"
+    "final-newline",
+    "newline"
   ],
   "author": "yeliex <yeliex@yeliex.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yeliex/codemirror-extensions/issues"
   },
-  "homepage": "https://github.com/yeliex/codemirror-extensions#readme"
+  "homepage": "https://github.com/yeliex/codemirror-extensions#readme",
+  "dependencies": {
+    "@swc/helpers": "^0.5.3",
+    "@codemirror/view": "^6.0.0"
+  }
 }

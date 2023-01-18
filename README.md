@@ -1,2 +1,2 @@
-# cmark-editor
-markdown editor based on codemirror with image-uploader, tabbar and react extensions
+# codemirror-extensions
+codemirror extensions includes toolbar, helper, image-upload, event-emitter

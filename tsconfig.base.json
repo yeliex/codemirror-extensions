@@ -1,0 +1,22 @@
+{
+    "extends": ["@tsconfig/strictest"],
+    "compileOnSave": false,
+    "compilerOptions": {
+        // keep sync with https://github.com/marijnh/buildtool/blob/main/src/buildtool.ts#L74-L75
+        "target": "ES6",
+        "module": "ES2020",
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "isolatedModules": true,
+        "verbatimModuleSyntax": true,
+        "exactOptionalPropertyTypes": false,
+        "noUncheckedIndexedAccess": false,
+        "noPropertyAccessFromIndexSignature": false
+    },
+    "include": [],
+    "references": [
+        {
+            "path": "./scripts/tsconfig.json"
+        }
+    ]
+}

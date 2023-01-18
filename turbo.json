@@ -1,5 +1,13 @@
 {
     "$schema": "https://turborepo.org/schema.json",
+    "globalDependencies": [
+        "tsconfig.base.json"
+    ],
     "pipeline": {
+        "build": {
+            "dependsOn": ["^build"],
+            "outputs": ["dist/**"],
+            "inputs": ["src/**", "tsconfig.json", "package.json"]
+        }
     }
 }

@@ -1,0 +1,9 @@
+{
+    "extends": ["@tsconfig/strictest", "@tsconfig/node20"],
+    "compilerOptions": {
+        "composite": true
+    },
+    "include": [
+        "./**/*.ts"
+    ]
+}
