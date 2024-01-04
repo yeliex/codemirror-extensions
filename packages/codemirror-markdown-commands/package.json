@@ -1,6 +1,6 @@
 {
   "name": "codemirror-markdown-commands",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "commands for markdown text operations",
   "type": "module",
   "types": "src/index.ts",
