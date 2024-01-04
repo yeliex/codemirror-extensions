@@ -21,7 +21,6 @@ interface UploadCallback {
 export interface UploadActionParams {
     id: string;
     file: File;
-    signal?: AbortSignal;
     callback: UploadCallback;
 }
 
@@ -30,11 +29,6 @@ export interface UploadOption {
     accept: string;
     action: (params: UploadActionParams) => void;
     generateId: (file: File) => string | Promise<string>;
-}
-
-export interface CacheItem {
-    id: string;
-    url: string;
 }
 
 interface InsertPosition {
