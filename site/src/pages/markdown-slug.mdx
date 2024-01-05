@@ -1,0 +1,10 @@
+import { Canvas, Markdown, Meta } from '@storybook/addon-docs';
+import README from 'codemirror-markdown-slug/README.md?raw';
+import * as Stories from './markdown-slug.stories';
+
+<Meta of={Stories} />
+
+<Markdown>{README}</Markdown>
+
+## Demo
+<Canvas of={Stories.Basic} source={{ code: Stories.Basic.toString() }} />

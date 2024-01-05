@@ -1,5 +1,5 @@
-import type { Command } from '@codemirror/view';
 import { EditorSelection } from '@codemirror/state';
+import type { Command } from '@codemirror/view';
 
 const italic: Command = (view) => {
     const currentRange = view.state.selection.main;

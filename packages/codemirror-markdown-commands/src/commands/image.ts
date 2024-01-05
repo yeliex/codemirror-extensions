@@ -1,5 +1,5 @@
-import type { Command } from '@codemirror/view';
 import { EditorSelection } from '@codemirror/state';
+import type { Command } from '@codemirror/view';
 
 export const image: Command = (view) => {
     const { state } = view;

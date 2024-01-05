@@ -1,5 +1,5 @@
-import type { Command } from '@codemirror/view';
 import { EditorSelection } from '@codemirror/state';
+import type { Command } from '@codemirror/view';
 
 const bold: Command = (view) => {
     const currentRange = view.state.selection.main;
@@ -8,7 +8,7 @@ const bold: Command = (view) => {
         const charStart = view.state.sliceDoc(currentRange.from - 2, currentRange.from);
         const chatEnd = view.state.sliceDoc(currentRange.to, currentRange.to + 2);
 
-        if(charStart === '**' && chatEnd === '**') {
+        if (charStart === '**' && chatEnd === '**') {
             view.focus();
             return false;
         }

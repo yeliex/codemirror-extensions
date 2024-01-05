@@ -3,7 +3,8 @@ import { basicSetup, EditorView } from 'codemirror';
 import finalNewline from 'codemirror-final-newline';
 
 export default {
-    title: 'codemirror-final-newline',
+    title: 'packages/codemirror-final-newline',
+    id: 'final-new-line',
 } as Meta;
 
 export const Basic = () => {

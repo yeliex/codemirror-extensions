@@ -1,5 +1,5 @@
-import type { Command } from '@codemirror/view';
 import { EditorSelection } from '@codemirror/state';
+import type { Command } from '@codemirror/view';
 
 const underline: Command = (view) => {
     const currentRange = view.state.selection.main;
@@ -8,7 +8,7 @@ const underline: Command = (view) => {
         const charStart = view.state.sliceDoc(currentRange.from - 3, currentRange.from);
         const chatEnd = view.state.sliceDoc(currentRange.to, currentRange.to + 4);
 
-        if(charStart === '<u>' && chatEnd === '</u>') {
+        if (charStart === '<u>' && chatEnd === '</u>') {
             view.focus();
             return false;
         }
@@ -29,6 +29,6 @@ const underline: Command = (view) => {
     view.focus();
 
     return true;
-}
+};
 
 export default underline;

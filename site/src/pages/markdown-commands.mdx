@@ -1,11 +1,10 @@
-import README from 'codemirror-final-newline/README.md?raw';
+import README from 'codemirror-markdown-commands/README.md?raw';
 import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
-import * as Stories from './final-newline.stories';
+import * as Stories from './markdown-commands.stories';
 
 <Meta of={Stories} />
 
 <Markdown>{README}</Markdown>
 
 ## Demo
-input any word and blur, you will see the final newline added
 <Canvas of={Stories.Basic} source={{code: Stories.Basic.toString()}} />

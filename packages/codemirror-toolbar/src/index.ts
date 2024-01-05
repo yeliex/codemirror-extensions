@@ -1,6 +1,6 @@
 import { type Command } from '@codemirror/view';
-import style from './style';
 import plugin from './plugin';
+import style from './style';
 
 export * from './defaults';
 export * as Items from './items';
@@ -19,13 +19,13 @@ export type ToolbarSplit = {
 }
 
 export type ToolbarSpace = {
-    type: 'space'
+    type: 'space';
 }
 
 export interface ToolbarConfig {
     items: Array<ToolbarItem | ToolbarSplit | ToolbarSpace>;
 }
 
-export const toolbar = (config: ToolbarConfig) => {
+export default (config: ToolbarConfig) => {
     return [plugin(config), style];
 };

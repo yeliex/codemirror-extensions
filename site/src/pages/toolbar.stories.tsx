@@ -2,55 +2,57 @@ import { defaultKeymap, indentWithTab } from '@codemirror/commands';
 import { markdown } from '@codemirror/lang-markdown';
 import { languages } from '@codemirror/language-data';
 import { keymap } from '@codemirror/view';
-import type { Meta, StoryFn } from '@storybook/html';
+import type { Meta } from '@storybook/html';
 import { basicSetup, EditorView } from 'codemirror';
-import finalNewline from 'codemirror-final-newline';
 import image, { command as imageUploadCommand } from 'codemirror-markdown-image';
-import slugPlugin, { command as slugCommand } from 'codemirror-markdown-slug';
-import { markdownItems, toolbar, type ToolbarItem } from 'codemirror-toolbar';
+import toolbar, { markdownItems, type ToolbarItem } from 'codemirror-toolbar';
 
 export default {
-    title: 'codemirror-toolbar',
-} as Meta<any>;
+    title: 'packages/codemirror-toolbar',
+    id: 'toolbar',
+} as Meta;
 
-const DOC = `# Hello World {#hw}
-## Subtitle
-**bold**
-*italic*
-~~strikethrough~~
-<u>underline</u>
-
-> blockquote
-
-- list
-- list
-
-1. list
-2. list
-
-- [ ] unchecked
-- [x] checked
-
-[link](https://github.com){target=blank}
-![link](https://github.githubassets.com/assets/mona-loading-default-c3c7aad1282f.gif){target=blank}
-![link](__image_uploading__:1212131312)
-`;
-
-const Template: StoryFn = (args) => {
+export const Basic = () => {
     const container = window.document.createElement('div');
-
+    container.style.height = '200px';
     const shadow = container.attachShadow({ mode: 'open' });
 
     new EditorView({
-        doc: DOC,
+        doc: '# Hello World\n## Subtitle {#custom-slug}',
         extensions: [
             basicSetup,
-            finalNewline,
             keymap.of([...defaultKeymap, indentWithTab]),
             markdown({ codeLanguages: languages }),
             EditorView.baseTheme({
                 '&.cm-editor': {
-                    height: 'calc(100vh - 2em)',
+                    height: '100%',
+                    backgroundColor: '#FFFFFF',
+                },
+            }),
+            toolbar({
+                items: markdownItems,
+            }),
+        ],
+        parent: shadow,
+    });
+
+    return container;
+};
+
+export const ImageUpload = () => {
+    const container = window.document.createElement('div');
+    container.style.height = '200px';
+    const shadow = container.attachShadow({ mode: 'open' });
+
+    new EditorView({
+        doc: '# Hello World\n## Subtitle {#custom-slug}',
+        extensions: [
+            basicSetup,
+            keymap.of([...defaultKeymap, indentWithTab]),
+            markdown({ codeLanguages: languages }),
+            EditorView.baseTheme({
+                '&.cm-editor': {
+                    height: '100%',
                     backgroundColor: '#FFFFFF',
                 },
             }),
@@ -68,21 +70,9 @@ const Template: StoryFn = (args) => {
                         command: imageUploadCommand,
                     } as ToolbarItem;
 
-                    const lastHeadingIndex = items.findLastIndex(item => 'label'
-                        in item
-                        && item.label.toLowerCase()
-                        === 'h6');
-
-                    items.splice(lastHeadingIndex + 1, 0, {
-                        label: 'Slug',
-                        icon: '#',
-                        command: slugCommand,
-                    });
-
                     return items;
                 })(),
             }),
-            slugPlugin(),
             image({
                 multiple: true,
                 action: ({ callback }) => {
@@ -102,12 +92,7 @@ const Template: StoryFn = (args) => {
             }),
         ],
         parent: shadow,
-        ...args,
     });
 
     return container;
-};
-
-export const Basic = Template.bind({});
-
-Basic.args = {};
+}

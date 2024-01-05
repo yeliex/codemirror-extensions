@@ -1,0 +1,15 @@
+import { Canvas, Markdown, Meta } from '@storybook/addon-docs';
+import README from 'codemirror-toolbar/README.md?raw';
+import * as Stories from './toolbar.stories';
+
+<Meta of={Stories} />
+
+<Markdown>{README}</Markdown>
+
+## Demo
+<Canvas of={Stories.Basic} source={{ code: Stories.Basic.toString() }} />
+
+### Custom command
+Replace image command in items to support custom image uploader
+
+<Canvas of={Stories.ImageUpload} source={{ code: Stories.ImageUpload.toString() }} />

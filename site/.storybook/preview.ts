@@ -9,4 +9,9 @@ export const parameters: Parameters = {
             date: /Date$/,
         },
     },
+    docs: {
+        source: {
+            language: 'typescript',
+        }
+    }
 };

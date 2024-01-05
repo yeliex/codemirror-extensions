@@ -1,5 +1,5 @@
+import { type ChangeSpec, EditorSelection } from '@codemirror/state';
 import type { Command } from '@codemirror/view';
-import { EditorSelection, type ChangeSpec } from '@codemirror/state';
 
 const quote: Command = (view) => {
     const { state } = view;

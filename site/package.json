@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "clean": "rm -rf storybook-static dist",
     "start": "storybook dev -p 6006 --no-open",
-    "build:site": "storybook build"
+    "build:site": "storybook build --output-dir dist --docs"
   },
   "dependencies": {
     "@codemirror/lang-markdown": "^6.2.3",
