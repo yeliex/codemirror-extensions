@@ -10,7 +10,7 @@
 
 commands for markdown text operations, useful with toolbar or invoke manually
 
-[Docs and examples](https://cm.yeliex.dev/?path=/docs/markdown-commands)
+[Docs and examples](https://cm.yeliex.dev)
 
 ## Install
 

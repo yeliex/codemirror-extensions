@@ -10,7 +10,7 @@
 
 slug preview for codemirror markdown, supports github flavored markdown
 
-[Docs and examples](https://cm.yeliex.dev/?path=/docs/markdown-slug)
+[Docs and examples](https://cm.yeliex.dev)
 
 ## Install
 

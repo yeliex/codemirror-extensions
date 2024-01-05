@@ -11,7 +11,7 @@
 
 toolbarw render for codemirror
 
-[Docs and examples](https://cm.yeliex.dev/?path=/docs/toolbar)
+[Docs and examples](https://cm.yeliex.dev)
 
 ## Install
 

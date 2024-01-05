@@ -10,7 +10,7 @@
 
 image preview and uploader for codemirror markdown editor
 
-[Docs and examples](https://cm.yeliex.dev/?path=/docs/markdown-image)
+[Docs and examples](https://cm.yeliex.dev)
 
 ## Install
 

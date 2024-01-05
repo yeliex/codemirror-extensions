@@ -11,7 +11,7 @@
 
 add final newline for codemirror
 
-[Docs and examples](https://cm.yeliex.dev/?path=/docs/final-newline)
+[Docs and examples](https://cm.yeliex.dev)
 
 ## Install
 

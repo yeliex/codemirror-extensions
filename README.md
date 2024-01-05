@@ -13,7 +13,7 @@ codemirror extensions includes toolbar, helper, image-upload, event-emitter
 
 add final newline for codemirror
 
-[Docs and examples](https://cm.yeliex.dev/?path=/docs/final-newline)
+[Docs and examples](https://cm.yeliex.dev)
 
 ## codemirror-markdown-commands
 <p>
@@ -27,7 +27,7 @@ add final newline for codemirror
 
 commands for markdown text operations, useful with toolbar or invoke manually
 
-[Docs and examples](https://cm.yeliex.dev/?path=/docs/markdown-commands)
+[Docs and examples](https://cm.yeliex.dev)
 
 ## codemirror-markdown-image
 <p>
@@ -41,7 +41,7 @@ commands for markdown text operations, useful with toolbar or invoke manually
 
 image preview and uploader for codemirror markdown editor
 
-[Docs and examples](https://cm.yeliex.dev/?path=/docs/markdown-image)
+[Docs and examples](https://cm.yeliex.dev)
 
 ## codemirror-markdown-slug
 <p>
@@ -55,7 +55,7 @@ image preview and uploader for codemirror markdown editor
 
 slug preview for codemirror markdown, supports github flavored markdown
 
-[Docs and examples](https://cm.yeliex.dev/?path=/docs/markdown-slug)
+[Docs and examples](https://cm.yeliex.dev)
 
 ## codemirror-toolbar
 
@@ -70,4 +70,4 @@ slug preview for codemirror markdown, supports github flavored markdown
 
 toolbarw render for codemirror
 
-[Docs and examples](https://cm.yeliex.dev/?path=/docs/toolbar)
+[Docs and examples](https://cm.yeliex.dev)
