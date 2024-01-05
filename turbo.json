@@ -8,6 +8,9 @@
             "dependsOn": ["^build"],
             "outputs": ["dist/**"],
             "inputs": ["src/**", "tsconfig.json", "package.json"]
+        },
+        "clean": {
+            "cache": false
         }
     }
 }

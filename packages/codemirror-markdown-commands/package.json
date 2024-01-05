@@ -11,6 +11,7 @@
     "require": "./dist/index.cjs"
   },
   "scripts": {
+    "clean": "rm -rf ./dist",
     "build": "../../scripts/build-package.ts",
     "prepublishOnly": "npm run build"
   },
