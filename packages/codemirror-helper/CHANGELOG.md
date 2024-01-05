@@ -1,5 +1,11 @@
 # codemirror-helper
 
+## 0.0.2
+
+### Patch Changes
+
+- aac4480: doc: update docs
+
 ## 0.0.1
 
 ### Patch Changes
