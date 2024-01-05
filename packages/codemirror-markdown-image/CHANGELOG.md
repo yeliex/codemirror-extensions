@@ -1,5 +1,11 @@
 # codemirror-markdown-image
 
+## 0.0.3
+
+### Patch Changes
+
+- 775fc62: chore: update docs
+
 ## 0.0.2
 
 ### Patch Changes

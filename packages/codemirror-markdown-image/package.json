@@ -1,6 +1,6 @@
 {
   "name": "codemirror-markdown-image",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "image preview and uploader for codemirror markdown editor",
   "type": "module",
   "types": "src/index.ts",

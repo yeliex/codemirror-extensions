@@ -1,6 +1,6 @@
 {
   "name": "codemirror-markdown-slug",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "slug preview for codemirror markdown, supports github flavored markdown",
   "type": "module",
   "types": "src/index.ts",
