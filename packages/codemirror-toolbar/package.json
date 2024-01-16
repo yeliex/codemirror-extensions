@@ -1,6 +1,6 @@
 {
   "name": "codemirror-toolbar",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "toolbar view render for codemirror",
   "type": "module",
   "types": "src/index.ts",

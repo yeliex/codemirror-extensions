@@ -1,5 +1,11 @@
 # codemirror-final-newline
 
+## 0.0.4
+
+### Patch Changes
+
+- b71ce50: chore: update build script
+
 ## 0.0.3
 
 ### Patch Changes
