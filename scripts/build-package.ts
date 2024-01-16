@@ -1,6 +1,6 @@
 #!/usr/bin/env TS_NODE_PROJECT=null node --import swc-register-esm
 
-import { type Options, transform } from '@swc/core';
+import { parse, transform } from '@swc/core';
 import glob from 'fast-glob';
 import { existsSync, statSync } from 'node:fs';
 import { copyFile, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
@@ -11,17 +11,17 @@ const CWD = process.cwd();
 
 const START = Date.now();
 
-const SWC_OPTIONS: Options = {
+const SWC_OPTIONS = {
     sourceMaps: false,
     jsc: {
         parser: {
-            syntax: 'typescript',
+            syntax: 'typescript' as const,
             tsx: true,
             decorators: true,
             dynamicImport: true,
         },
         externalHelpers: true,
-        target: 'es2020',
+        target: 'es2020' as const,
         keepClassNames: true,
     },
 };
@@ -91,6 +91,7 @@ for (const relativePath of files) {
 const tsconfig = ts.readConfigFile(resolve(CWD, 'tsconfig.json'), ts.sys.readFile);
 const parsedTsConfig = ts.parseJsonConfigFileContent(tsconfig.config, ts.sys, CWD);
 const tsHost = ts.createCompilerHost(parsedTsConfig.options);
+const tsModuleResolutionCache = ts.createModuleResolutionCache(ts.sys.getCurrentDirectory(), (x) => x, tsconfig.config);
 
 const tsProgram = ts.createProgram({
     rootNames: COMPILE_FILES.map(item => item.absolute),
@@ -127,17 +128,11 @@ for (const { relative: relativePath, absolute: absolutePath } of COMPILE_FILES) 
     );
 
     try {
-        const { code: commonJs } = await transform(source, {
-            ...SWC_OPTIONS,
-            module: {
-                type: 'commonjs',
-            },
-
+        const ast = await parse(source, {
+            ...SWC_OPTIONS.jsc.parser,
         });
 
-        await writeFile(`${outputBase}.cjs`, commonJs, 'utf-8');
-
-        const { code: esm } = await transform(source, {
+        const { code: esm } = await transform(ast, {
             ...SWC_OPTIONS,
             module: {
                 type: 'es6',
@@ -145,6 +140,40 @@ for (const { relative: relativePath, absolute: absolutePath } of COMPILE_FILES) 
         });
 
         await writeFile(`${outputBase}.js`, esm, 'utf-8');
+
+        // transform js import to cjs
+        for (const item of ast.body) {
+            if ('source' in item) {
+                const { value } = item.source;
+
+                const { resolvedModule } = ts.resolveModuleName(
+                    value,
+                    absolutePath,
+                    parsedTsConfig.options,
+                    tsHost,
+                    tsModuleResolutionCache,
+                );
+
+                if (resolvedModule && resolvedModule.resolvedFileName.startsWith(SRC_ROOT)) {
+                    const ext = extname(item.source.value);
+
+                    item.source.value = ext ? value.replace(/\.js$/, '.cjs') :
+                        resolvedModule.resolvedFileName.match(/\/index\.[tj]sx?$/)
+                            ? `${value}/index.cjs`
+                            : `${value}.cjs`;
+                }
+            }
+        }
+
+
+        const { code: commonJs } = await transform(ast, {
+            ...SWC_OPTIONS,
+            module: {
+                type: 'commonjs',
+            },
+        });
+
+        await writeFile(`${outputBase}.cjs`, commonJs, 'utf-8');
     } catch (e) {
         console.log(`${relativePath} (0,0):${e instanceof Error ? e.message : e}`);
     }

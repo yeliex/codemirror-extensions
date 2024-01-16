@@ -9,7 +9,8 @@
     "site"
   ],
   "scripts": {
-    "clean": "turbo run clean",
+    "clean": "turbo run clean --no-daemon",
+    "build": "turbo run build --no-daemon",
     "start": "yarn workspace site run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
