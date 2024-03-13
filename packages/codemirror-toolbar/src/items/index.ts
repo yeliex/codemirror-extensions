@@ -1,8 +1,6 @@
 import { type ToolbarItem, type ToolbarSpace, type ToolbarSplit } from '../index';
 import { type EditorView } from '@codemirror/view';
 
-export * as Markdown from './markdown';
-
 export const split: ToolbarSplit = {
     type: 'split',
 };

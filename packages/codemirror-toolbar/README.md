@@ -34,8 +34,57 @@ new EditorView({
 });
 ```
 
+### Customize toolbar items
+```typescript
+import { EditorView } from '@codemirror/view';
+import toolbar from 'codemirror-toolbar';
+import * as Items from 'codemirror-toolbar/items';
+import * as MarkdownItems from 'codemirror-toolbar/items/markdown';
+
+new EditorView({
+    extensions: [
+        toolbar({
+            items: [
+                MarkdownItems.bold,
+                MarkdownItems.italic,
+                MarkdownItems.strike,
+                MarkdownItems.underline,
+                Items.split,
+                MarkdownItems.h1,
+                MarkdownItems.h2,
+                MarkdownItems.h3,
+                MarkdownItems.h4,
+                MarkdownItems.h5,
+                MarkdownItems.h6,
+                Items.split,
+                MarkdownItems.quote,
+                MarkdownItems.ul,
+                MarkdownItems.ol,
+                MarkdownItems.todo,
+                Items.split,
+                MarkdownItems.link,
+                {
+                    ...MarkdownItems.image,
+                    command: (view: EditorView) => {
+                        view.dispatch({
+                            // ...
+                        });
+                        
+                        return true;
+                    }
+                },
+                Items.space,
+                Items.fullScreen,
+            ],
+        }),
+    ],
+});
+```
+
 ## Plugin Options
 ```typescript
+import { type Command } from '@codemirror/view';
+
 export interface ToolbarConfig {
     items: Array<ToolbarItem | ToolbarSplit | ToolbarSpace>;
 }

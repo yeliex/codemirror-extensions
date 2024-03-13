@@ -3,7 +3,6 @@ import plugin from './plugin';
 import style from './style';
 
 export * from './defaults';
-export * as Items from './items';
 
 export type ToolbarItem = {
     icon: string;

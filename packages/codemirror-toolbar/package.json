@@ -7,8 +7,18 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "exports": {
-    "import": "./dist/index.js",
-    "require": "./dist/index.cjs"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./items": {
+      "import": "./dist/items/index.js",
+      "require": "./dist/items/index.cjs"
+    },
+    "./items/*": {
+      "import": "./dist/items/*.js",
+      "require": "./dist/items/*.cjs"
+    }
   },
   "scripts": {
     "clean": "rm -rf ./dist",
@@ -32,5 +42,13 @@
   "dependencies": {
     "@codemirror/view": "^6.0.0",
     "@codemirror/state": "^6.0.0"
+  },
+  "peerDependencies": {
+    "codemirror-markdown-commands": "^0.0.4"
+  },
+  "peerDependenciesMeta": {
+    "codemirror-markdown-commands": {
+      "optional": true
+    }
   }
 }
