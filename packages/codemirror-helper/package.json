@@ -1,6 +1,6 @@
 {
   "name": "codemirror-helper",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "codemirror helper dialog",
   "type": "module",
   "types": "src/index.ts",

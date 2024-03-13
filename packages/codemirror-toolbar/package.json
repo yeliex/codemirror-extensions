@@ -1,6 +1,6 @@
 {
   "name": "codemirror-toolbar",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "toolbar view render for codemirror",
   "type": "module",
   "types": "src/index.ts",
@@ -44,7 +44,7 @@
     "@codemirror/state": "^6.0.0"
   },
   "peerDependencies": {
-    "codemirror-markdown-commands": "^0.0.4"
+    "codemirror-markdown-commands": "^0.1.0"
   },
   "peerDependenciesMeta": {
     "codemirror-markdown-commands": {

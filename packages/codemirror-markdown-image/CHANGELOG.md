@@ -1,5 +1,11 @@
 # codemirror-markdown-image
 
+## 0.1.0
+
+### Minor Changes
+
+- a45f4de: chore: update toolbar subexport
+
 ## 0.0.4
 
 ### Patch Changes

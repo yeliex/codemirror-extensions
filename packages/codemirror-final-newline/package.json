@@ -1,6 +1,6 @@
 {
   "name": "codemirror-final-newline",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "add final newline for codemirror",
   "type": "module",
   "types": "src/index.ts",
