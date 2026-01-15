@@ -3,6 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "target": "ESNext",
+    "moduleResolution": "bundler",
     "useDefineForClassFields": true,
     "skipLibCheck": true,
     "noEmit": true,
@@ -11,6 +12,6 @@
       "codemirror-toolbar/*": ["../packages/codemirror-toolbar/src/*"],
     }
   },
-  "include": ["src"],
+  "include": ["src", ".storybook/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

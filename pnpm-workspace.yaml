@@ -1,0 +1,12 @@
+packages:
+  - packages/*
+  - site
+
+catalog:
+  '@codemirror/lint': ^6.0.0
+  '@codemirror/state': ^6.0.0
+  '@codemirror/view': ^6.0.0
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild

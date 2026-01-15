@@ -1,0 +1,12 @@
+{
+  "compileOnSave": false,
+  "references": [
+    {"path": "./packages/codemirror-final-newline"},
+    {"path": "./packages/codemirror-helper"},
+    {"path": "./packages/codemirror-markdown-commands"},
+    {"path": "./packages/codemirror-markdown-image"},
+    {"path": "./packages/codemirror-markdown-slug"},
+    {"path": "./packages/codemirror-toolbar"},
+    {"path": "./site"}
+  ]
+}

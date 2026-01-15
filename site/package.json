@@ -14,19 +14,14 @@
     "codemirror": "^6.0.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^7.6.7",
-    "@storybook/addon-essentials": "^7.6.7",
-    "@storybook/addon-interactions": "^7.6.7",
-    "@storybook/addon-links": "^7.6.7",
-    "@storybook/addon-docs": "^7.6.7",
-    "@storybook/html": "^7.6.7",
-    "@storybook/html-vite": "^7.6.7",
-    "@storybook/testing-library": "^0.2.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "remark-gfm": "^3.0.1",
-    "sass": "^1.69.5",
-    "storybook": "^7.6.7",
-    "vite": "^5.0.10"
+    "@storybook/addon-docs": "^10.1.11",
+    "@storybook/addon-links": "^10.1.11",
+    "@storybook/html": "^10.1.11",
+    "@storybook/html-vite": "^10.1.11",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "remark-gfm": "^4.0.1",
+    "storybook": "^10.1.11",
+    "vite": "^7.3.1"
   }
 }

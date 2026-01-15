@@ -31,7 +31,6 @@
   },
   "homepage": "https://github.com/yeliex/codemirror-extensions#readme",
   "dependencies": {
-    "@swc/helpers": "^0.5.3",
-    "@codemirror/view": "^6.0.0"
+    "@codemirror/view": "catalog:"
   }
 }

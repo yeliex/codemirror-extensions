@@ -32,8 +32,8 @@
   },
   "homepage": "https://github.com/yeliex/codemirror-extensions#readme",
   "dependencies": {
-    "@codemirror/view": "^6.0.0",
-    "@codemirror/state": "^6.0.0",
+    "@codemirror/view": "catalog:",
+    "@codemirror/state": "catalog:",
     "github-slugger": "^2.0.0"
   }
 }
